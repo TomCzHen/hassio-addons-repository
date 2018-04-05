@@ -6,8 +6,7 @@
 
 2. 通过添加 [RESTful Sensor](https://www.home-assistant.io/components/sensor.rest/) 查看 ZeroTier One 状态
 
-```
-  - platform: rest
+- platform: rest
     name: ZeroTier One Status
     json_attributes:
       - address
@@ -17,7 +16,6 @@
     method: GET
     headers:
       X-ZT1-Auth: yourauthtoken
-```
 
 3. 在 ZeroTier Central 使用 Manually Add Member 添加设备 `address`
 
