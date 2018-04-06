@@ -1,32 +1,34 @@
 {
-    "name": "ZeroTier One",
-    "version": "1.0.0",
-    "slug": "zerotier-one",
-    "url": "https://bbs.hassbian.com/thread-3314-1-1.html",
-    "description": "ZeroTier One",
-    "arch": [
-      "armhf",
-      "amd64"
-    ],
-    "startup": "services",
-    "boot": "auto",
-    "host_network": true,
-    "privileged": [
-      "NET_ADMIN",
-      "SYS_ADMIN"
-    ],
-    "devices": [
-      "/dev/net/tun:/dev/net/tun:rwm"
-    ],
-    "options": {
-      "port": "9993",
-      "auth_token": "",
-      "log_level": "info"
-    },
-    "schema": {
-      "port": "port",
-      "auth_token": "match([0-9A-Za-z]+)",
-      "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)"
-    },
-    "image": "tomczhen/addon-zerotier-one-{arch}"
-  }
+  "name": "ZeroTier One",
+  "version": "1.0.0",
+  "slug": "zerotier-one",
+  "url": "https://bbs.hassbian.com/thread-3314-1-1.html",
+  "description": "ZeroTier One",
+  "arch": [
+    "armhf",
+    "amd64"
+  ],
+  "startup": "services",
+  "boot": "auto",
+  "host_network": true,
+  "privileged": [
+    "NET_ADMIN",
+    "SYS_ADMIN"
+  ],
+  "devices": [
+    "/dev/net/tun:/dev/net/tun:rwm"
+  ],
+  "options": {
+    "network_id":"",
+    "port": "9993",
+    "auth_token": "",
+    "log_level": "info"
+  },
+  "schema": {
+    "network_id":"match([0-9a-z]{16})",
+    "port": "port",
+    "auth_token": "match([0-9A-Za-z]+)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)"
+  },
+  "image": "tomczhen/addon-zerotier-one-{arch}"
+}
